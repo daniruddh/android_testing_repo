@@ -1,4 +1,4 @@
-package org.example.app
+package org.opstree.app
 
 import org.junit.jupiter.api.Test
 
