@@ -6,12 +6,6 @@ plugins {
     kotlin("android")
 }
 
-// Load keystore properties
-val keystorePropertiesFile = rootProject.file("app/keystore.properties")
-val keystoreProperties = Properties()
-if (keystorePropertiesFile.exists()) {
-    keystoreProperties.load(FileInputStream(keystorePropertiesFile))
-}
 
 android {
     namespace = "org.opstree.app"
@@ -24,19 +18,22 @@ android {
         versionCode = 5
         versionName = "1.0.1"
     }
-    
-    //signingConfigs {
-    //    create("release") {
-    //        storeFile = file(keystoreProperties.getProperty("storeFile") ?: "upload-keystore.jks")
-    //        storePassword = keystoreProperties.getProperty("storePassword")
-    //        keyAlias = keystoreProperties.getProperty("keyAlias")
-    //        keyPassword = keystoreProperties.getProperty("keyPassword")
-    //    }
-    //}
+	signingConfigs {
+    	create("release") {
+        // Read keystore file path from environment variable or use default
+        val keystoreFile = System.getenv("KEYSTORE_FILE")
+        storeFile = file(keystoreFile)
+        
+        // Read signing credentials from environment variables
+        storePassword = System.getenv("KEYSTORE_PASSWORD")
+        keyAlias = System.getenv("KEY_ALIAS") 
+        keyPassword = System.getenv("KEY_PASSWORD") 
+    	}
+	}
     
     buildTypes {
         release {
-            // signingConfig = signingConfigs.getByName("release")
+            signingConfig = signingConfigs.getByName("release")
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
