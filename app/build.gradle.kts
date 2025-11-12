@@ -15,7 +15,7 @@ android {
         applicationId = "org.opstree.app"
         minSdk = 32 // Update to your version
         targetSdk = 35 // Update to your version
-        versionCode = 21
+        versionCode = 29
         versionName = "1.0.1"
     }
 	signingConfigs {
