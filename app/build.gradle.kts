@@ -12,7 +12,7 @@ android {
     compileSdk = 35 // Update to your version
     
     defaultConfig {
-        applicationId = "org.opstree.app"
+        applicationId = "com.trueworkpoint.app"
         minSdk = 32 // Update to your version
         targetSdk = 35 // Update to your version
         versionCode = 42
