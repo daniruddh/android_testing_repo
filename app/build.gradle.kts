@@ -15,7 +15,7 @@ android {
         applicationId = "com.trueworkpoint.app"
         minSdk = 32 // Update to your version
         targetSdk = 36 // Update to your version
-        versionCode = 55 // Update to your version
+        versionCode = 56 // Update to your version
         versionName = "1.0.1"
     }
 	signingConfigs {
