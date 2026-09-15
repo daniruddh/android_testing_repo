@@ -9,12 +9,12 @@ plugins {
 
 android {
     namespace = "org.opstree.app"
-    compileSdk = 35 // Update to your version
+    compileSdk = 36 // Update to your version
     
     defaultConfig {
         applicationId = "com.trueworkpoint.app"
         minSdk = 32 // Update to your version
-        targetSdk = 35 // Update to your version
+        targetSdk = 36 // Update to your version
         versionCode = 55 // Update to your version
         versionName = "1.0.1"
     }
